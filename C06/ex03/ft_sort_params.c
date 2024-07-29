@@ -6,14 +6,14 @@
 /*   By: tedcarpi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 09:18:18 by tedcarpi          #+#    #+#             */
-/*   Updated: 2024/07/29 09:47:40 by tedcarpi         ###   ########.fr       */
+/*   Updated: 2024/07/29 11:36:19 by tedcarpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 void	ft_putstr(char *str)
-{	
+{
 	int	i;
 
 	i = 0;
@@ -27,9 +27,9 @@ void	ft_putstr(char *str)
 
 char	**ft_swap(char **str)
 {
-	int	i;
-	int	j;
-	int	k;
+	int		i;
+	int		j;
+	int		k;
 	char	*swap;
 
 	i = 1;
@@ -40,14 +40,12 @@ char	**ft_swap(char **str)
 		{
 			k = 0;
 			while ((str[i][k] || str[j][k]) && str[i][k] == str[j][k])
-			{
-				if (str[i][k] > str[j][k])
-				{
-					swap = str[i];
-					str[i] = str[j];
-					str[j] = swap;
-				}
 				k++;
+			if (str[i][k] > str[j][k])
+			{
+				swap = str[i];
+				str[i] = str[j];
+				str[j] = swap;
 			}
 			j++;
 		}
