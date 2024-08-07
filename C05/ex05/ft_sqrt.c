@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tedcarpi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 17:39:48 by tedcarpi          #+#    #+#             */
-/*   Updated: 2024/07/31 15:30:53 by tedcarpi         ###   ########.fr       */
+/*   Created: 2024/08/06 14:32:08 by tedcarpi          #+#    #+#             */
+/*   Updated: 2024/08/07 17:53:37 by tedcarpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putstr(char *str)
+int	ft_sqrt(int nb)
 {
 	int	i;
 
-	i = 0;
-	while (str[i])
+	i = 1;
+	while (i * i <= nb)
 	{
-		write(1, &str[i], 1);
+		if (i * i == nb)
+			return (i);
 		i++;
-	}
-	write(1, "\n", 1);
-}
-
-int	main(int argc, char **argv)
-{
-	while (argc != 1)
-	{
-		ft_putstr(argv[argc - 1]);
-		argc--;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tedcarpi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 09:18:18 by tedcarpi          #+#    #+#             */
-/*   Updated: 2024/07/29 11:36:19 by tedcarpi         ###   ########.fr       */
+/*   Updated: 2024/07/30 23:57:54 by tedcarpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,15 @@ char	**ft_swap(char **str)
 
 int	main(int argc, char **argv)
 {
-	int	i;
+	int		i;
+	char	**sort;
 
 	i = 1;
-	if (argc == 1)
-		write(1, "\n", 1);
-	else
+	sort = ft_swap(argv);
+	while (i < argc)
 	{
-		while (i < argc)
-		{
-			ft_putstr(argv[i]);
-			i++;
-		}
+		ft_putstr(sort[i]);
+		i++;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tedcarpi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 17:25:42 by tedcarpi          #+#    #+#             */
-/*   Updated: 2024/07/28 17:36:24 by tedcarpi         ###   ########.fr       */
+/*   Updated: 2024/07/31 15:34:47 by tedcarpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ int	main(int argc, char **argv)
 	int	i;
 
 	i = 1;
-	if (argc == 1)
-		write(1, "\n", 1);
-	else
+	if (argc > 1)
 	{
 		while (argv[i])
 		{

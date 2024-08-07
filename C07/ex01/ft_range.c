@@ -1,36 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tedcarpi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 17:39:48 by tedcarpi          #+#    #+#             */
-/*   Updated: 2024/07/31 15:30:53 by tedcarpi         ###   ########.fr       */
+/*   Created: 2024/07/30 23:13:45 by tedcarpi          #+#    #+#             */
+/*   Updated: 2024/07/31 14:11:45 by tedcarpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putstr(char *str)
+int	*ft_range(int min, int max)
 {
+	int	len;
 	int	i;
+	int	*range;
 
+	if (min >= max)
+		return (NULL);
+	len = max - min;
+	range = malloc (len * sizeof(int));
 	i = 0;
-	while (str[i])
+	if (range == NULL)
+		return (NULL);
+	while (i < len)
 	{
-		write(1, &str[i], 1);
+		range[i] = min;
+		min++;
 		i++;
 	}
-	write(1, "\n", 1);
+	return (range);
 }
+/*
+#include <stdio.h>
 
-int	main(int argc, char **argv)
+int	main()
 {
-	while (argc != 1)
+	int	*tab;
+	int	i;
+
+	tab = ft_range(0, 100);
+	i = 0;
+	while (i < 100)
 	{
-		ft_putstr(argv[argc - 1]);
-		argc--;
+		printf("%d", tab[i]);
+		printf("%s", ", ");
+		i++;
 	}
+	printf("%s", "\n");
+	free(tab);
 	return (0);
-}
+}*/
